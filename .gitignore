@@ -2,5 +2,6 @@
 *.pyo
 .env
 package-lock.json
+webpack-stats.json
 __pycache__/
 node_modules/

@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const BundleTracker = require('webpack-bundle-tracker')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
@@ -7,13 +8,17 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist',
+    publicPath: '/static/',
     filename: 'bundle.js'
   },
 
   plugins: [
+    new BundleTracker({
+      path: __dirname,
+      filename: './webpack-stats.json'
+    }),
     new MiniCssExtractPlugin({
-      filename: 'bundle.css'
+      filename: './bundle.css'
     })
   ],
 
