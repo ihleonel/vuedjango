@@ -1,3 +1,4 @@
+{% load render_bundle from webpack_loader %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,9 +6,11 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=7">
   <title>{% block title %}{% endblock %}</title>
+  {% render_bundle 'main' 'css' %}
 </head>
 <body>
   {% block container %}
   {% endblock %}
+  {% render_bundle 'main' 'js' %}
 </body>
 </html>
