@@ -9,8 +9,10 @@
   {% render_bundle 'main' 'css' %}
 </head>
 <body>
-  {% block container %}
-  {% endblock %}
+  <div id="app">
+    {% block container %}
+    {% endblock %}
+  </div>
   {% render_bundle 'main' 'js' %}
 </body>
 </html>

@@ -20,7 +20,8 @@
   "dependencies": {
     "bootstrap": "^4.5.1",
     "jquery": "^3.5.1",
-    "popper": "^1.0.1"
+    "popper": "^1.0.1",
+    "vue": "^2.6.11"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
@@ -33,8 +34,8 @@
     "sass": "^1.26.10",
     "sass-loader": "^9.0.3",
     "style-loader": "^1.2.1",
-    "vue": "^2.6.11",
-    "vue-loader": "^15.9.3",
+    "vue-loader": "^14.2.2",
+    "vue-template-compiler": "^2.6.11",
     "webpack": "^4.44.1",
     "webpack-bundle-tracker": "^0.4.3",
     "webpack-cli": "^3.3.12",
