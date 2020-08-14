@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const BundleTracker = require('webpack-bundle-tracker')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
   entry: './src/index',
@@ -19,7 +20,8 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: './bundle.css'
-    })
+    }),
+    new VueLoaderPlugin()
   ],
 
   module: {
@@ -32,18 +34,28 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
+          'vue-style-loader',
           MiniCssExtractPlugin.loader,
           'css-loader',
-          'vue-style-loader'
         ]
       },
       {
         test: /\.scss$/,
         use: [
+          'vue-style-loader',
           MiniCssExtractPlugin.loader,
           'css-loader',
-          'sass-loader'
+          'sass-loader',
         ]
+      },
+      {
+        test: /\.sass$/,
+        use: [
+          'vue-style-loader',
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader?indentedSyntax'
+        ],
       },
       {
         test: /\.vue$/,
