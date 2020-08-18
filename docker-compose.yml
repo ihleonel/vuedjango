@@ -13,13 +13,23 @@ services:
 
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: gunicorn vuedjango.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - .:/code
-    ports:
-      - 8000:8000
+    expose:
+      - 8000
     depends_on:
       - db
+
+  nginx:
+    build: ./nginx
+    volumes:
+      - ./dist:/tmp/static
+    ports:
+      - 8000:80
+    depends_on:
+      - web
+
 
 networks:
   default:
