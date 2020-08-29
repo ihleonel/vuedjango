@@ -29,4 +29,4 @@ jobs:
           github_token: ${{ secrets.github_token }}
           # Enable linters
           flake8: true
-          flake8_args: "--max-complexity 10 --show-source"
+          flake8_args: "--max-complexity 15 --max-line-length 99 --show-source"
