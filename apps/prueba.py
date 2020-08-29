@@ -1,4 +1,4 @@
-def suma(var1= 0,  var2=0):
+def suma(var1= 0, var2=0):
     return var1 + var2
 
 
