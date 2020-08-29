@@ -17,4 +17,3 @@ jobs:
       with:
         select: E,F,B,G0
         maxlinelength: 100
-        repotoken: ${{ secrets.GITHUB_TOKEN }}
