@@ -12,7 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: tonybajan/flake8-check-action@v1.0.0
+    - name: Set up Python
+      uses: actions/setup-python@v2
       with:
-        maxlinelength: 80
-        repotoken: ${{ secrets.GITHUB_TOKEN }}
+        python-version: '3.x'
+    - name: Lint with flake8
+      run: |
+        pip install flake8
+        flake8 .
