@@ -128,7 +128,6 @@ STATICFILES_DIRS = (
     BASE_DIR / 'dist',
 )
 
-
 # Webpack
 WEBPACK_LOADER = {
     'DEFAULT': {
