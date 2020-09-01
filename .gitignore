@@ -5,4 +5,5 @@ package-lock.json
 webpack-stats.json
 __pycache__/
 dist/
+env/
 node_modules/
