@@ -7,7 +7,5 @@ repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.2.0
     hooks:
-    - id: debug-statements
-    - id: trailing-whitespace
-    - id: name-tests-test
-      args: ['--django']
+      - id: name-tests-test
+        args: ['--django']
