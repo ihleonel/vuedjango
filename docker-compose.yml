@@ -10,6 +10,8 @@ services:
       PGDATA: /var/lib/postgresql/data/pgdata
     ports:
       - ${DB_PORT}:${DB_PORT}
+    networks:
+      - djangonetwork
 
   web:
     build: .
@@ -20,6 +22,8 @@ services:
       - 8000
     depends_on:
       - db
+    networks:
+      - djangonetwork
 
   nginx:
     build: ./nginx
@@ -29,10 +33,10 @@ services:
       - 8000:80
     depends_on:
       - web
+    networks:
+      - djangonetwork
 
 
 networks:
-  default:
-    ipam:
-      config:
-        - subnet: 172.70.0.0/16
+  djangonetwork:
+      driver: bridge
