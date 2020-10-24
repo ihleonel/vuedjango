@@ -13,4 +13,4 @@ repos:
     rev: v3.3.0
     hooks:
       - id: name-tests-test
-        args: ['--django']
+        entry: name-tests-test --django
