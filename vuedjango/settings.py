@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'webpack_loader',
     'apps.libros',
+    'apps.autores',
 ]
 
 MIDDLEWARE = [
