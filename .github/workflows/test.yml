@@ -6,16 +6,6 @@ jobs:
     name: Run linters
     runs-on: ubuntu-latest
 
-    services:
-      image: postgres:9.6.18
-      environment:
-        POSTGRES_USER: postgres
-        POSTGRES_PASSWORD: postgres
-        POSTGRES_DB: postgres
-        PGDATA: /var/lib/postgresql/data/pgdata
-      ports:
-        - 5432:5432
-
     steps:
       - uses: actions/checkout@v1
       - name: Set Up Python 3.8.5
