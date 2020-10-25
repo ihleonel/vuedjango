@@ -3,7 +3,7 @@ on: push
 
 jobs:
   run-tests:
-    name: Run linters
+    name: Run Tests
     runs-on: ubuntu-latest
 
     steps:
@@ -13,6 +13,6 @@ jobs:
         with:
           python-version: 3.8.6
       - name: Install dependencies
-        run: pip install -r requirements.py
+        run: pip install -r requirements.txt
       - name: Run Tests
         run: python manege.py test apps
