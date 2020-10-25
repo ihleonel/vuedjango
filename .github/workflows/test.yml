@@ -14,5 +14,7 @@ jobs:
           python-version: 3.8.6
       - name: Install dependencies
         run: pip install -r requirements.txt
+      - name: Copy .env
+        run: cp .env.example .env
       - name: Run Tests
         run: python manage.py test apps
