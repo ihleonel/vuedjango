@@ -8,13 +8,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: Set Up Python 3.8.6
+      - name: Set Up Python 3.8
         uses: actions/setup-python@v1
         with:
-          python-version: 3.8.6
-      - name: Install dependencies
+          python-version: 3.8
+      - name: Install Python Dependencies
         run: pip install -r requirements.txt
-      - name: Copy .env
+      - name: Environments
         run: cp .env.example .env
       - name: Run Tests
         run: python manage.py test apps
